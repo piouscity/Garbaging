@@ -6,9 +6,7 @@ using System;
 public class Fish : MonoBehaviour
 {
 
-    public float speed_fish_01 = 0.01f;
-    public float speed_fish_02 = 0.02f;
-    public float speed_fish_03 = 0.03f;
+    
     private int direction;
     float speed;
 
@@ -24,15 +22,15 @@ public class Fish : MonoBehaviour
         string fishName = this.gameObject.name;
         if (fishName.Contains("fish_01"))
         {
-            speed = speed_fish_01;
+            speed = GameManager.instance.speed_of_fish(1);
         }
         else if (fishName.Contains("fish_02"))
         {
-            speed = speed_fish_02;
+            speed = GameManager.instance.speed_of_fish(2);
         }
         else
         {
-            speed = speed_fish_03;
+            speed = GameManager.instance.speed_of_fish(3);
         }
 
         posTemp = GetComponent<Transform>().position;
