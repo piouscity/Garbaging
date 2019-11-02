@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4304788487015397242}
   - component: {fileID: 548072966139712426}
+  - component: {fileID: 7284088190590098794}
+  - component: {fileID: -1062886905282854871}
   m_Layer: 0
-  m_Name: bottle
+  m_Name: trash_bottle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8606954924531674537, guid: d6c0e99cec6a61e4d9da8423f80cc96d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -80,3 +82,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &7284088190590098794
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731895138533800751}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.94, y: 0.68}
+    newSize: {x: 0.94, y: 0.68}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.44, y: 0.29}
+      - {x: 0.22999999, y: 0.34}
+      - {x: 0.08, y: 0.34}
+      - {x: -0.049999997, y: 0.25}
+      - {x: -0.19999999, y: 0.34}
+      - {x: -0.32999998, y: 0.34}
+      - {x: -0.45, y: 0.28}
+      - {x: -0.45, y: -0.06}
+      - {x: -0.44, y: -0.14}
+      - {x: -0.38, y: -0.24}
+      - {x: -0.26, y: -0.32999998}
+      - {x: -0.17, y: -0.34}
+      - {x: 0.17999999, y: -0.34}
+      - {x: 0.26999998, y: -0.29}
+      - {x: 0.44, y: -0.14999999}
+      - {x: 0.47, y: -0.03}
+      - {x: 0.47, y: 0.26}
+--- !u!114 &-1062886905282854871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731895138533800751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ca3c933b8af45569729963ce7c4d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

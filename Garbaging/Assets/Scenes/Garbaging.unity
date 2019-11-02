@@ -268,11 +268,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06484faa594da40778f5e7a1cab8d9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxX: 7
-  minX: 9
-  maxY: 2
+  speed_fish_01: 0.01
+  speed_fish_02: 0.02
+  speed_fish_03: 0.03
+  maxX: 14
+  minX: 12
+  maxY: 3
   minY: -4.5
   fishList: []
+  gameOver: 0
+  score: 0
 --- !u!4 &145141781
 Transform:
   m_ObjectHideFlags: 0

@@ -9,12 +9,12 @@ public class Hook : MonoBehaviour
     bool isUp = false;
     float speed;
     float distance;
-    float temp = 0;
     // Start is called before the first frame update
+    [System.Obsolete]
     void Start()
     {
-        speed = 0.02f;
-        distance = 7.93f;
+        speed = GameManager.instance.speedHook;
+        GetComponent<Rigidbody2D>().fixedAngle = true;
     }
 
     // Update is called once per frame
@@ -23,25 +23,18 @@ public class Hook : MonoBehaviour
         Vector2 posTemp = GetComponent<Transform>().position;
         if (isMove)
         {
-            if (isLeft)
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
-                posTemp.x -= speed;
-                temp += speed;
-                if (temp > distance)
-                {
-                    isLeft = false;
-                    temp = 0;
-                    distance *= 2;
-                }
+                
+                if (posTemp.x > -GameManager.instance.screenHeight) { posTemp.x -= speed; }
+
             }
-            else
+            else if (Input.GetKey(KeyCode.RightArrow))
             {
-                posTemp.x += speed;
-                temp += speed;
-                if (temp > distance)
+                
+                if (posTemp.x < GameManager.instance.screenHeight)
                 {
-                    isLeft = true;
-                    temp = 0;
+                    posTemp.x += speed;
                 }
             }
             GetComponent<Transform>().position = posTemp;
@@ -49,10 +42,12 @@ public class Hook : MonoBehaviour
         else
         {
             if (!isUp) {
+                GetComponent<Rigidbody2D>().isKinematic = false;
                 posTemp.y -= 2 * speed;
                 GetComponent<Transform>().position = posTemp;
-                if (GetComponent<Transform>().position.y <= -4.61)
+                if (GetComponent<Transform>().position.y <= 0)
                 {
+                    GetComponent<Rigidbody2D>().isKinematic = true;
                     isUp = true;
                 }
             }
@@ -60,7 +55,7 @@ public class Hook : MonoBehaviour
             {
                 posTemp.y += 3 * speed;
                 GetComponent<Transform>().position = posTemp;
-                if (GetComponent<Transform>().position.y >= 4.61)
+                if (GetComponent<Transform>().position.y >= GameManager.instance.maxHook)
                 {
                     isUp = false;
                     isMove = true;
@@ -72,5 +67,24 @@ public class Hook : MonoBehaviour
             isMove = false;
         }
 
+    }
+
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name.Contains("fish")) {
+            if (!isUp)
+            {
+                GameManager.instance.gameOver = true;
+            }
+        }
+
+        if (collision.gameObject.name.Contains("trash"))
+        {
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            isUp = true;
+            GameManager.instance.score += 2;
+
+        }
     }
 }

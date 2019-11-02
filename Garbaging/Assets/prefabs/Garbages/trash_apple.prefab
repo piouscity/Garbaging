@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7383399999960260263}
   - component: {fileID: 2206157479319432766}
+  - component: {fileID: 7756832247360096919}
+  - component: {fileID: 4849361250992567854}
   m_Layer: 0
-  m_Name: apple
+  m_Name: trash_apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4458568418676487812, guid: d6c0e99cec6a61e4d9da8423f80cc96d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -80,3 +82,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &7756832247360096919
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11494777905207388}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.87, y: 0.61}
+    newSize: {x: 0.87, y: 0.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.33499998, y: -0.175}
+      - {x: 0.435, y: -0.055}
+      - {x: 0.435, y: 0.195}
+      - {x: 0.33499998, y: 0.295}
+      - {x: 0.275, y: 0.305}
+      - {x: 0.225, y: 0.305}
+      - {x: 0.16499999, y: 0.265}
+      - {x: 0.13499999, y: 0.16499999}
+      - {x: -0.005, y: 0.114999995}
+      - {x: -0.295, y: 0.205}
+      - {x: -0.355, y: 0.225}
+      - {x: -0.435, y: 0.13499999}
+      - {x: -0.435, y: -0.055}
+      - {x: -0.405, y: -0.205}
+      - {x: -0.325, y: -0.305}
+      - {x: -0.145, y: -0.305}
+      - {x: -0.16499999, y: -0.185}
+      - {x: -0.055, y: -0.114999995}
+      - {x: 0.16499999, y: -0.145}
+--- !u!114 &4849361250992567854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11494777905207388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ca3c933b8af45569729963ce7c4d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

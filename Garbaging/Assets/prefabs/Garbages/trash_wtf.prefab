@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2911987808791573388}
   - component: {fileID: 7487146161169314625}
+  - component: {fileID: 7820702112994320216}
+  - component: {fileID: 7631062855904896811}
   m_Layer: 0
-  m_Name: wtf
+  m_Name: trash_wtf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 3633426898569884919, guid: d6c0e99cec6a61e4d9da8423f80cc96d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -80,3 +82,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &7820702112994320216
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859833369319606470}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.58, y: 0.91}
+    newSize: {x: 0.58, y: 0.91}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.19999999, y: 0.024999999}
+      - {x: 0.28, y: 0.114999995}
+      - {x: 0.28, y: 0.235}
+      - {x: 0.25, y: 0.405}
+      - {x: 0.21, y: 0.45499998}
+      - {x: -0.03, y: 0.45499998}
+      - {x: -0.26, y: 0.255}
+      - {x: -0.28, y: 0.13499999}
+      - {x: -0.22, y: -0.024999999}
+      - {x: -0.29, y: -0.185}
+      - {x: -0.29, y: -0.45499998}
+      - {x: 0.22999999, y: -0.45499998}
+      - {x: 0.28, y: -0.415}
+      - {x: 0.28, y: -0.295}
+      - {x: 0.25, y: -0.16499999}
+--- !u!114 &7631062855904896811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3859833369319606470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ca3c933b8af45569729963ce7c4d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
