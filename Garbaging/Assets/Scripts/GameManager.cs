@@ -5,9 +5,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public float maxX = 7.0f;
+    public float maxX = 13.0f;
+    public float minX = 11.0f;
     public float maxY = 2f;
     public float minY = -4.5f;
+    public List<GameObject> fishList;
     private void Awake()
     {
         if (instance == null)

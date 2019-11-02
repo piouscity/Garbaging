@@ -52,9 +52,10 @@ public class Fish : MonoBehaviour
         }
         GetComponent<Transform>().position = posTemp;
 
-        if (GetComponent<Transform>().position.x >= 9 || GetComponent<Transform>().position.x <= -9)
+        if (GetComponent<Transform>().position.x >= 15 || GetComponent<Transform>().position.x <= -15)
         {
             Destroy(this.gameObject);
+            GameManager.instance.fishList.Remove(this.gameObject);
         }
     }
 
