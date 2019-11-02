@@ -19,7 +19,7 @@ public class Fish : MonoBehaviour
     void Start()
     {
         System.Random random = new System.Random();
-        direction = random.Next(2);
+        direction = random.Next(1,10);
 
         string fishName = this.gameObject.name;
         if (fishName.Contains("fish_01"))
@@ -42,7 +42,7 @@ public class Fish : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (direction == 1)
+        if (direction % 2 == 1)
         {
             moveRight();
         }
