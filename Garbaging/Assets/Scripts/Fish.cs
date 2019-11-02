@@ -12,6 +12,8 @@ public class Fish : MonoBehaviour
     private int direction;
     float speed;
 
+    Vector2 posTemp;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,22 +35,38 @@ public class Fish : MonoBehaviour
             speed = speed_fish_03;
         }
 
+        posTemp = GetComponent<Transform>().position;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        Vector2 posTemp = GetComponent<Transform>().position;
         if (direction == 1)
         {
-            posTemp.x += speed;
+            moveRight();
         }
         else
         {
-            GetComponent<SpriteRenderer>().flipX = false;
-            posTemp.x -= speed;
+            moveLeft();
         }
         GetComponent<Transform>().position = posTemp;
+
+        if (GetComponent<Transform>().position.x >= 9 || GetComponent<Transform>().position.x <= -9)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void moveLeft()
+    {
+        GetComponent<SpriteRenderer>().flipX = false;
+        posTemp.x -= speed;
+    }
+
+    void moveRight()
+    {
+        GetComponent<SpriteRenderer>().flipX = true;
+        posTemp.x += speed;
     }
 }
