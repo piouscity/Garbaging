@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: 1f2b269c1bce54e13be8c118ce092c6c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1383420463350247503
+    second: ca_kiem_0
+  - first:
+      213: 8848206572149874147
+    second: ca_kiem_1
+  - first:
+      213: 6036991455789997485
+    second: ca_kiem_2
+  - first:
+      213: -2051028393543611188
+    second: ca_kiem_3
+  - first:
+      213: 9072025563643157700
+    second: ca_kiem_4
+  - first:
+      213: -5000116949856832010
+    second: ca_kiem_5
+  - first:
+      213: -1165610325262353866
+    second: ca_kiem_6
+  - first:
+      213: 151792149278881505
+    second: ca_kiem_7
+  - first:
+      213: -1112110059889864379
+    second: ca_kiem_8
+  - first:
+      213: 5332228334553481760
+    second: ca_kiem_9
+  - first:
+      213: 7785652207987608682
+    second: ca_kiem_10
+  - first:
+      213: -7290792758697738949
+    second: ca_kiem_11
+  - first:
+      213: -8351658372732891065
+    second: ca_kiem_12
+  - first:
+      213: 3079276820549260349
+    second: ca_kiem_13
+  - first:
+      213: 3489271984200034251
+    second: ca_kiem_14
+  - first:
+      213: 352003395648314665
+    second: ca_kiem_15
+  - first:
+      213: -539248007420221313
+    second: ca_kiem_16
+  - first:
+      213: 4664920578869036937
+    second: ca_kiem_17
+  - first:
+      213: -1030271854865930166
+    second: ca_kiem_18
+  - first:
+      213: 2094644227153160200
+    second: ca_kiem_19
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +100,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +129,462 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ca_kiem_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 207
+        width: 120
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bded633747b86401e8e1fed7bdda1aa0
+      internalID: 1383420463350247503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 207
+        width: 120
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3596cea22c6b14122bba18c6635f52cc
+      internalID: 8848206572149874147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_2
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 207
+        width: 120
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b155c63049b465e98e4fb9caa73707
+      internalID: 6036991455789997485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_3
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 208
+        width: 120
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462980f21f98d4f53bea7bc0ca301c3e
+      internalID: -2051028393543611188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 119
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9263a60fc3d494f0f95a3939215f1194
+      internalID: 9072025563643157700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_5
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 159
+        width: 105
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2987a822bb8a24ca5bb24f980bffb2e7
+      internalID: -5000116949856832010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_6
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 159
+        width: 115
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62950ab365ea24bda9e2ed91f0c274c6
+      internalID: -1165610325262353866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_7
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 159
+        width: 107
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790b167eebb1448aa967cf61cfe31607
+      internalID: 151792149278881505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 111
+        width: 110
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555de5156703b48768ef17ea8c61e7db
+      internalID: -1112110059889864379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_9
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 112
+        width: 106
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b4ae1ec4f85421fa2d781801db14ac
+      internalID: 5332228334553481760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_10
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 112
+        width: 120
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45cb87a339fe8407db029c0d2dac027a
+      internalID: 7785652207987608682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_11
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 112
+        width: 107
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51104a91dcedf439291e9e6c16c969c6
+      internalID: -7290792758697738949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 64
+        width: 120
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4780ccb8624cc44dea65c8fdd262fb8d
+      internalID: -8351658372732891065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_13
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 64
+        width: 109
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbcbc4e51d194ec397ac9d4dca67034
+      internalID: 3079276820549260349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_14
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 65
+        width: 120
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b62e225a1c804d7ba47716d45277646
+      internalID: 3489271984200034251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_15
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 65
+        width: 120
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a073f66d15664192b8c74161585ccbb
+      internalID: 352003395648314665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_16
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 18
+        width: 116
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92b61c3ce87146b3999aba6d1d031d7
+      internalID: -539248007420221313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_17
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 18
+        width: 112
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14d0ac7a2210a4897868f0c8e809a23a
+      internalID: 4664920578869036937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_18
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 20
+        width: 120
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6417c6f1b91ed4b5d8cfab5cb8a7ffae
+      internalID: -1030271854865930166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ca_kiem_19
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 20
+        width: 120
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bf582bb16ac4452a182d3d9cf0e229
+      internalID: 2094644227153160200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
