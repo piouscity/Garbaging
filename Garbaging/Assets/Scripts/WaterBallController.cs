@@ -10,7 +10,7 @@ public class WaterBallController : MonoBehaviour
 
     void createWaterBall()
     {
-        GameManager.instance.listWaterBall.Add((GameObject)Instantiate(waterball, new Vector2(Random.Range(-9, 9), GameManager.instance.minY - 0.5f), Quaternion.identity));
+        GameManager.instance.listWaterBall.Add((GameObject)Instantiate(waterball, new Vector2(Random.Range(-GameManager.instance.screenHeight, GameManager.instance.screenHeight), GameManager.instance.minY - 0.5f), Quaternion.identity));
 
     }
 

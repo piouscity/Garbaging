@@ -35,7 +35,7 @@ public class FishController : MonoBehaviour
         {
             createFish(fishType1, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
             createFish(fishType3, new Vector2(Random.Range(GameManager.instance.minX, GameManager.instance.maxX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-            createFish(fishType1, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
+            createFish(fishType2, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
         }
     }
 }

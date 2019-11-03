@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public float maxY = 3f;
     public float minY = -4.5f;
 
-    public float screenHeight = 8.5f;
+    public float screenHeight = 9.5f;
 
     public List<GameObject> fishList;
     public List<GameObject> listTrash;
