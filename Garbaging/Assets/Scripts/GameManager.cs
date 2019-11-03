@@ -7,14 +7,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public float level = 1;
-    public float speedHook = 0.04f;
+    public int level = 1;
+
+    public float speedHook = 0.02f;
+    public float init_speedHook = 0.02f;
     public float maxHook = 9.1f;
+
+
     public float maxX = 10.5f;
     public float minX = 9.5f;
     public float maxY = 3f;
     public float minY = -4.5f;
+
     public float screenHeight = 8.5f;
+
     public List<GameObject> fishList;
     public List<GameObject> listTrash;
 
@@ -50,7 +56,32 @@ public class GameManager : MonoBehaviour
         }
 
         // Set up level
-        level = score / 10 + 1;
+        level = score / 5 + 1;
+
+        switch (level)
+        {
+            case 1:
+                speedHook = init_speedHook * 1.2f;
+                break;
+            case 2:
+                speedHook = init_speedHook * Mathf.Pow(1.15f, 2);
+                break;
+            case 3:
+                speedHook = init_speedHook * Mathf.Pow(1.15f, 3);
+                break;
+            case 4:
+                speedHook = init_speedHook * Mathf.Pow(1.15f, 4);
+                break;
+            case 5:
+                speedHook = init_speedHook * Mathf.Pow(1.15f, 5);
+                break;
+            case 6:
+                speedHook = init_speedHook * Mathf.Pow(1.15f, 6);
+                break;
+            default:
+                speedHook = init_speedHook * Mathf.Pow(1.15f, 7);
+                break;
+        }
 
     }
 }

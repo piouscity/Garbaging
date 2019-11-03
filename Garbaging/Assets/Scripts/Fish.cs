@@ -19,7 +19,7 @@ public class Fish : MonoBehaviour
             isRight = true;
         }
 
-        speed = speed * (float)(1 + GameManager.instance.level * 2.0 / 10) + (float)(Random.Range(1,3) * 1.0 / 100);
+        speed = speed * Mathf.Pow(1.2f, GameManager.instance.level) + (float)(Random.Range(1,3) * 1.0 / 100);
 
     }
 
