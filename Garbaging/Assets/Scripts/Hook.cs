@@ -56,7 +56,7 @@ public class Hook : MonoBehaviour
                 {
                     isUp = false;
                     isMove = true;
-                    GameManager.instance.score += 1;
+                    GameManager.instance.AddScore();
                 }
             }
         }

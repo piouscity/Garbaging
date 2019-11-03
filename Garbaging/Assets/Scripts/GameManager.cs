@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +28,8 @@ public class GameManager : MonoBehaviour
 
     public bool gameOver = false;
 
-    public int score = 0;
+    public Text score_text;
+    int score = 0;
 
     private void Awake()
     {
@@ -83,6 +85,11 @@ public class GameManager : MonoBehaviour
                 speedHook = init_speedHook * Mathf.Pow(1.15f, 7);
                 break;
         }
+    }
 
+    public void AddScore()
+    {
+        score++;
+        score_text.text = score.ToString();
     }
 }
