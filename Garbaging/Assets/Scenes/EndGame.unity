@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 1409530571}
   - component: {fileID: 1409530570}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,6 +893,7 @@ GameObject:
   - component: {fileID: 1964232104}
   - component: {fileID: 1964232103}
   - component: {fileID: 1964232106}
+  - component: {fileID: 1964232107}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -960,3 +961,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30bda440f5d859e438ead076c230496b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1964232107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964232102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbed56d5405b764284bf9ad62717a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score_text: {fileID: 1409530570}

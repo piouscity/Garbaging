@@ -86,6 +86,7 @@ public class GameManager : MonoBehaviour
     }
     public void SetGameOver()
     {
+        StaticClass.CrossSceneInformation = score_text.text;
         eventSystem.GetComponent<UIManager>().LoadSceneWithID(end_scene);
     }
 }
