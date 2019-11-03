@@ -22,13 +22,15 @@ public class GameManager : MonoBehaviour
 
     public float screenHeight = 9.5f;
 
+    public GameObject eventSystem;
     public List<GameObject> fishList;
     public List<GameObject> listTrash;
     public List<GameObject> listWaterBall;
 
     public Text score_text;
     int score = 0;
-    bool gameOver = false;
+
+    public int end_scene = 2;
 
     private void Awake()
     {
@@ -48,15 +50,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameOver)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                gameOver = false;
-            }
-        }
-
         // Set up level
         level = score / 5 + 1;
 
@@ -93,7 +86,6 @@ public class GameManager : MonoBehaviour
     }
     public void SetGameOver()
     {
-        gameOver = true;
-        UIManager.LoadSceneWithID(2);
+        eventSystem.GetComponent<UIManager>().LoadSceneWithID(end_scene);
     }
 }
