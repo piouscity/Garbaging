@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hook : MonoBehaviour
-{
-    bool isLeft = true;
+{ 
     bool isMove = true;
     bool isUp = false;
     float distance;

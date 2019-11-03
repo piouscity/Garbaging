@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> fishList;
     public List<GameObject> listTrash;
+    public List<GameObject> listWaterBall;
 
     public bool gameOver = false;
 
