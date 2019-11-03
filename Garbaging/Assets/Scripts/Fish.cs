@@ -22,10 +22,20 @@ public class Fish : MonoBehaviour
         speed = speed * Mathf.Pow(1.2f, GameManager.instance.level) + (float)(Random.Range(1,3) * 1.0 / 100);
 
     }
-
+    public int temp = 1;
     // Update is called once per frame
     void Update()
     {
+
+        if (GameManager.instance.level >= 3)
+        {
+            temp += 1;
+            System.Random random = new System.Random();
+            if (temp % 180 == 0 && random.Next(24) % 15 == 0)
+            {
+                isRight = !isRight;
+            }
+        }
         if (isRight)
         {
             moveRight();
