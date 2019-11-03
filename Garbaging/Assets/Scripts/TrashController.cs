@@ -29,12 +29,12 @@ public class TrashController : MonoBehaviour
         createTrash(trashType2);
         createTrash(trashType3);
         createTrash(trashType4);
-        //createTrash(trashType5);
-        //createTrash(trashType6);
-        //createTrash(trashType7);
-        //createTrash(trashType8);
-        //createTrash(trashType9);
-        //createTrash(trashType10);
+        createTrash(trashType5);
+        createTrash(trashType6);
+        createTrash(trashType7);
+        createTrash(trashType8);
+        createTrash(trashType9);
+        createTrash(trashType10);
     }
 
     void Start()
