@@ -73,7 +73,7 @@ public class Hook : MonoBehaviour
         if (collision.gameObject.name.Contains("fish")) {
             if (!isUp)
             {
-                GameManager.instance.gameOver = true;
+                GameManager.instance.SetGameOver();
             }
         }
 
@@ -81,7 +81,6 @@ public class Hook : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().isKinematic = true;
             isUp = true;
-
         }
     }
 }

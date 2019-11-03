@@ -26,10 +26,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> listTrash;
     public List<GameObject> listWaterBall;
 
-    public bool gameOver = false;
-
     public Text score_text;
     int score = 0;
+    bool gameOver = false;
 
     private void Awake()
     {
@@ -91,5 +90,10 @@ public class GameManager : MonoBehaviour
     {
         score++;
         score_text.text = score.ToString();
+    }
+    public void SetGameOver()
+    {
+        gameOver = true;
+        UIManager.LoadSceneWithID(2);
     }
 }
