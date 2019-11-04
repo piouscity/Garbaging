@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public AudioSource sound_score;
 
     public int level = 1;
 
@@ -81,6 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore()
     {
+        sound_score.Play();
         score++;
         score_text.text = score.ToString();
     }

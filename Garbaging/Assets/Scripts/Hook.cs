@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hook : MonoBehaviour
-{ 
+{
+    public AudioSource soundHookMoved;
+    public AudioSource soundHookVsGarbage;
+    public AudioSource soundHookVsFish;
     bool isMove = true;
     bool isUp = false;
     float distance;
@@ -62,6 +65,8 @@ public class Hook : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if (isMove)
+                soundHookMoved.Play();
             isMove = false;
         }
 
@@ -73,12 +78,14 @@ public class Hook : MonoBehaviour
         if (collision.gameObject.name.Contains("fish")) {
             if (!isUp)
             {
+                soundHookVsFish.Play();
                 GameManager.instance.SetGameOver();
             }
         }
 
         if (collision.gameObject.name.Contains("trash"))
         {
+            soundHookVsGarbage.Play();
             GetComponent<Rigidbody2D>().isKinematic = true;
             isUp = true;
         }
