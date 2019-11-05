@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private List<GameObject> listTrash;
     public GameObject trashType1;
     public GameObject trashType2;
     public GameObject trashType3;
@@ -16,7 +16,7 @@ public class TrashController : MonoBehaviour
     public GameObject trashType9;
     public GameObject trashType10;
 
-    void createTrash(GameObject trash)
+    void CreateTrash(GameObject trash)
     {
         GameObject new_trash = Instantiate(
             trash, 
@@ -32,34 +32,41 @@ public class TrashController : MonoBehaviour
             ), 
             Quaternion.identity
         );
-        GameManager.instance.listTrash.Add(new_trash);
+        new_trash.GetComponent<Trash>().manager = GetComponent<TrashController>();
+        listTrash.Add(new_trash);
     }
 
-    void createListTrash()
+    public void RemoveTrash(GameObject trash)
     {
-        createTrash(trashType1);
-        createTrash(trashType2);
-        createTrash(trashType3);
-        createTrash(trashType4);
-        createTrash(trashType5);
-        createTrash(trashType6);
-        createTrash(trashType7);
-        createTrash(trashType8);
-        createTrash(trashType9);
-        createTrash(trashType10);
+        listTrash.Remove(trash);
+    }
+
+    void CreateListTrash()
+    {
+        CreateTrash(trashType1);
+        CreateTrash(trashType2);
+        CreateTrash(trashType3);
+        CreateTrash(trashType4);
+        CreateTrash(trashType5);
+        CreateTrash(trashType6);
+        CreateTrash(trashType7);
+        CreateTrash(trashType8);
+        CreateTrash(trashType9);
+        CreateTrash(trashType10);
     }
 
     void Start()
     {
-        createListTrash();
+        listTrash = new List<GameObject>();
+        CreateListTrash();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.listTrash.Count == 0)
+        if (listTrash.Count == 0)
         {
-            createListTrash();
+            CreateListTrash();
         }
     }
 }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trash : MonoBehaviour
+public class Trash : MonoBehaviour
 {
+    public TrashController manager;
     Vector2 posTemp;
     bool isChoose = false;
     // Start is called before the first frame update
@@ -21,15 +22,15 @@ public class trash : MonoBehaviour
             GetComponent<Transform>().position = posTemp;
             if (posTemp.y >= -GameManager.instance.minY)
             {
-                Destroy(this.gameObject);
-                GameManager.instance.listTrash.Remove(this.gameObject);
+                Destroy(gameObject);
+                manager.RemoveTrash(gameObject);
             }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("hook"))
+        if (collision.gameObject.CompareTag("Hook"))
         {
             isChoose = true;
         }

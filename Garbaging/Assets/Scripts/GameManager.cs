@@ -7,6 +7,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public GameObject trashController;
+    public GameObject fishController;
+    public GameObject waterBallController;
+    public GameObject eventSystem;
+
     public AudioSource sound_score;
 
     public int level = 1;
@@ -15,18 +20,12 @@ public class GameManager : MonoBehaviour
     public float init_speedHook = 0.02f;
     public float maxHook = 9.1f;
 
-
     public float maxX = 10.5f;
     public float minX = 9.5f;
     public float maxY = 3f;
     public float minY = -4.5f;
 
     public float screenHeight = 9.5f;
-
-    public GameObject eventSystem;
-    public List<GameObject> fishList;
-    public List<GameObject> listTrash;
-    public List<GameObject> listWaterBall;
 
     public Text score_text;
     int score = 0;

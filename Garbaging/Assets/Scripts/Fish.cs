@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    public FishController manager;
     private int direction;
     public float speed = 0.01f;
     public bool isRight = false;
@@ -49,7 +50,7 @@ public class Fish : MonoBehaviour
         if (GetComponent<Transform>().position.x >= GameManager.instance.maxX || GetComponent<Transform>().position.x <= -GameManager.instance.maxX)
         {
             Destroy(this.gameObject);
-            GameManager.instance.fishList.Remove(this.gameObject);
+            manager.RemoveFish(gameObject);
         }
     }
 

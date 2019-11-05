@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaterBall : MonoBehaviour
 {
+    public WaterBallController manager;
     Vector2 posTemp;
     bool isAccident = false;
     // Start is called before the first frame update
@@ -19,8 +20,8 @@ public class WaterBall : MonoBehaviour
         {
             posTemp.y += 0.02f;
             if(posTemp.y >= -GameManager.instance.minY + 1.0f) {
-                Destroy(this.gameObject);
-                GameManager.instance.listWaterBall.Remove(this.gameObject);
+                Destroy(gameObject);
+                manager.RemoveWaterBall(gameObject);
             }
             GetComponent<Transform>().position = posTemp;
         } else 
@@ -28,8 +29,8 @@ public class WaterBall : MonoBehaviour
             temp += 1;
             if (temp == 10)
             {
-                Destroy(this.gameObject);
-                GameManager.instance.listWaterBall.Remove(this.gameObject);
+                Destroy(gameObject);
+                manager.RemoveWaterBall(gameObject);
             }
             
         }

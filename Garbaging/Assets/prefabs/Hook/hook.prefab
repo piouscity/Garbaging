@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2105382072041356277}
   m_Layer: 0
   m_Name: hook
-  m_TagString: Untagged
+  m_TagString: Hook
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,6 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3401eb1d264784bdaad8658b47a3a2fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundHookMoved: {fileID: 0}
+  soundHookVsGarbage: {fileID: 0}
+  soundHookVsFish: {fileID: 0}
 --- !u!70 &2105382072041356277
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
