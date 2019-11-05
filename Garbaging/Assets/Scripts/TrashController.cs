@@ -16,11 +16,23 @@ public class TrashController : MonoBehaviour
     public GameObject trashType9;
     public GameObject trashType10;
 
-
     void createTrash(GameObject trash)
     {
-        GameManager.instance.listTrash.Add((GameObject)Instantiate(trash, new Vector2(Random.Range(-GameManager.instance.screenHeight / 2, GameManager.instance.screenHeight / 2), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)), Quaternion.identity));
-
+        GameObject new_trash = Instantiate(
+            trash, 
+            new Vector2(
+                Random.Range(
+                    -GameManager.instance.screenHeight / 2, 
+                    GameManager.instance.screenHeight / 2
+                ), 
+                Random.Range(
+                    GameManager.instance.minY, 
+                    GameManager.instance.maxY
+                )
+            ), 
+            Quaternion.identity
+        );
+        GameManager.instance.listTrash.Add(new_trash);
     }
 
     void createListTrash()
