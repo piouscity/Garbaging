@@ -1102,9 +1102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   banner: {fileID: 1998718494}
-  banner_text: {fileID: 2047006309}
-  open_sound: {fileID: 216454219}
-  effect_time: 0.5
+  bannerText: {fileID: 2047006309}
+  openningSound: {fileID: 216454219}
+  effectTime: 0.5
 --- !u!1 &1998718493
 GameObject:
   m_ObjectHideFlags: 0

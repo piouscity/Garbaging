@@ -9,7 +9,6 @@ public class Hook : MonoBehaviour
     public AudioSource soundHookVsFish;
     bool isMove = true;
     bool isUp = false;
-    float distance;
     // Start is called before the first frame update
     [System.Obsolete]
     void Start()
@@ -71,11 +70,10 @@ public class Hook : MonoBehaviour
         }
 
     }
-
-    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name.Contains("fish")) {
+        if (collision.gameObject.CompareTag("Fish")) 
+        {
             if (!isUp)
             {
                 soundHookVsFish.Play();
@@ -83,7 +81,7 @@ public class Hook : MonoBehaviour
             }
         }
 
-        if (collision.gameObject.name.Contains("trash"))
+        if (collision.gameObject.CompareTag("Trash"))
         {
             soundHookVsGarbage.Play();
             GetComponent<Rigidbody2D>().isKinematic = true;

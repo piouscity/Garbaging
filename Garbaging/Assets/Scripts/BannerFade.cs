@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class BannerFade : MonoBehaviour
 {
     public Image banner;
-    public Text banner_text;
-    public AudioSource open_sound;
-    public float effect_time;
+    public Text bannerText;
+    public AudioSource openningSound;
+    public float effectTime = 0.5f;
     void Start()
     {
         StartCoroutine(Fade());
@@ -18,14 +18,14 @@ public class BannerFade : MonoBehaviour
     {
         for(int i=0; i<2; ++i)
         {
-            banner_text.CrossFadeAlpha(0, effect_time, false);
-            yield return new WaitForSeconds(effect_time);
-            banner_text.CrossFadeAlpha(1, effect_time, false);
-            yield return new WaitForSeconds(effect_time);
+            bannerText.CrossFadeAlpha(0, effectTime, false);
+            yield return new WaitForSeconds(effectTime);
+            bannerText.CrossFadeAlpha(1, effectTime, false);
+            yield return new WaitForSeconds(effectTime);
         }
-        open_sound.Play();
+        openningSound.Play();
         banner.CrossFadeAlpha(0, 1, false);
-        banner_text.enabled = false;
+        bannerText.enabled = false;
         yield return new WaitForSeconds(1);
         banner.enabled = false;
     }

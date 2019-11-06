@@ -12,12 +12,12 @@ public class GameManager : MonoBehaviour
     public GameObject waterBallController;
     public GameObject eventSystem;
 
-    public AudioSource sound_score;
+    public AudioSource scoreSound;
 
     public int level = 1;
 
     public float speedHook = 0.02f;
-    public float init_speedHook = 0.02f;
+    public float initSpeedHook = 0.02f;
     public float maxHook = 9.1f;
 
     public float maxX = 10.5f;
@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
 
     public float screenHeight = 9.5f;
 
-    public Text score_text;
+    public Text scoreText;
     int score = 0;
 
-    public int end_scene = 2;
+    public int endScene = 2;
 
     private void Awake()
     {
@@ -56,38 +56,38 @@ public class GameManager : MonoBehaviour
         switch (level)
         {
             case 1:
-                speedHook = init_speedHook * 1.2f;
+                speedHook = initSpeedHook * 1.2f;
                 break;
             case 2:
-                speedHook = init_speedHook * Mathf.Pow(1.15f, 2);
+                speedHook = initSpeedHook * Mathf.Pow(1.15f, 2);
                 break;
             case 3:
-                speedHook = init_speedHook * Mathf.Pow(1.15f, 3);
+                speedHook = initSpeedHook * Mathf.Pow(1.15f, 3);
                 break;
             case 4:
-                speedHook = init_speedHook * Mathf.Pow(1.15f, 4);
+                speedHook = initSpeedHook * Mathf.Pow(1.15f, 4);
                 break;
             case 5:
-                speedHook = init_speedHook * Mathf.Pow(1.15f, 5);
+                speedHook = initSpeedHook * Mathf.Pow(1.15f, 5);
                 break;
             case 6:
-                speedHook = init_speedHook * Mathf.Pow(1.15f, 6);
+                speedHook = initSpeedHook * Mathf.Pow(1.15f, 6);
                 break;
             default:
-                speedHook = init_speedHook * Mathf.Pow(1.15f, 7);
+                speedHook = initSpeedHook * Mathf.Pow(1.15f, 7);
                 break;
         }
     }
 
     public void AddScore()
     {
-        sound_score.Play();
+        scoreSound.Play();
         score++;
-        score_text.text = score.ToString();
+        scoreText.text = score.ToString();
     }
     public void SetGameOver()
     {
-        StaticClass.CrossSceneInformation = score_text.text;
-        eventSystem.GetComponent<UIManager>().LoadSceneWithID(end_scene);
+        StaticClass.CrossSceneInformation = scoreText.text;
+        eventSystem.GetComponent<UIManager>().LoadSceneWithID(endScene);
     }
 }

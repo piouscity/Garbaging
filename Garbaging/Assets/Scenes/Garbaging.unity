@@ -280,18 +280,18 @@ MonoBehaviour:
   fishController: {fileID: 745658707}
   waterBallController: {fileID: 919333041}
   eventSystem: {fileID: 2124352536}
-  sound_score: {fileID: 520291975}
+  scoreSound: {fileID: 520291975}
   level: 1
   speedHook: 0.02
-  init_speedHook: 0.02
+  initSpeedHook: 0.02
   maxHook: 9.1
   maxX: 10.5
   minX: 9.5
   maxY: 3
   minY: -4.5
   screenHeight: 8.5
-  score_text: {fileID: 2051813496}
-  end_scene: 2
+  scoreText: {fileID: 2051813496}
+  endScene: 2
 --- !u!4 &145141781
 Transform:
   m_ObjectHideFlags: 0

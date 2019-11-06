@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class EndManager : MonoBehaviour
 {
-    public Text score_text;
+    public Text scoreText;
     // Start is called before the first frame update
     void Start()
     {
-        score_text.text = StaticClass.CrossSceneInformation;
+        scoreText.text = StaticClass.CrossSceneInformation;
     }
 }

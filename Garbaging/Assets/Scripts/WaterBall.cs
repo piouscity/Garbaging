@@ -39,6 +39,5 @@ public class WaterBall : MonoBehaviour
     {
         GetComponent<Animator>().SetTrigger("Accident");
         isAccident = true;
-
     }
 }

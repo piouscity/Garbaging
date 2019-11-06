@@ -18,7 +18,7 @@ public class TrashController : MonoBehaviour
 
     void CreateTrash(GameObject trash)
     {
-        GameObject new_trash = Instantiate(
+        GameObject newTrash = Instantiate(
             trash, 
             new Vector2(
                 Random.Range(
@@ -32,8 +32,8 @@ public class TrashController : MonoBehaviour
             ), 
             Quaternion.identity
         );
-        new_trash.GetComponent<Trash>().manager = GetComponent<TrashController>();
-        listTrash.Add(new_trash);
+        newTrash.GetComponent<Trash>().manager = GetComponent<TrashController>();
+        listTrash.Add(newTrash);
     }
 
     public void RemoveTrash(GameObject trash)

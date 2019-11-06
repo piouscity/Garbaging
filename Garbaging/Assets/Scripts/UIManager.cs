@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public void LoadSceneWithID(int scene_id)
+    public void LoadSceneWithID(int sceneId)
     {
-        SceneManager.LoadScene(scene_id);
+        SceneManager.LoadScene(sceneId);
     }
     public void ExitGame()
     {

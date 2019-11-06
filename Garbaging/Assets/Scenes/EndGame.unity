@@ -972,4 +972,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbed56d5405b764284bf9ad62717a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score_text: {fileID: 1409530570}
+  scoreText: {fileID: 1409530570}
