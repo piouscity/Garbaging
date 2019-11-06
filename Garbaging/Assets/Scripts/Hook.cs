@@ -7,6 +7,11 @@ public class Hook : MonoBehaviour
     public AudioSource soundHookMoved;
     public AudioSource soundHookVsGarbage;
     public AudioSource soundHookVsFish;
+
+    public float speedHook = 0.02f;
+    public float initSpeedHook = 0.02f;
+    public float maxHook = 9.1f;
+
     bool isMove = true;
     bool isUp = false;
     // Start is called before the first frame update
@@ -25,7 +30,7 @@ public class Hook : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 
-                if (posTemp.x > -GameManager.instance.screenHeight) { posTemp.x -= GameManager.instance.speedHook; }
+                if (posTemp.x > -GameManager.instance.screenHeight) { posTemp.x -= speedHook; }
 
             }
             else if (Input.GetKey(KeyCode.RightArrow))
@@ -33,7 +38,7 @@ public class Hook : MonoBehaviour
                 
                 if (posTemp.x < GameManager.instance.screenHeight)
                 {
-                    posTemp.x += GameManager.instance.speedHook;
+                    posTemp.x += speedHook;
                 }
             }
             GetComponent<Transform>().position = posTemp;
@@ -42,7 +47,7 @@ public class Hook : MonoBehaviour
         {
             if (!isUp) {
                 GetComponent<Rigidbody2D>().isKinematic = false;
-                posTemp.y -= 2 * GameManager.instance.speedHook;
+                posTemp.y -= 2 * speedHook;
                 GetComponent<Transform>().position = posTemp;
                 if (GetComponent<Transform>().position.y <= 0)
                 {
@@ -52,9 +57,9 @@ public class Hook : MonoBehaviour
             }
             else
             {
-                posTemp.y += 3 * GameManager.instance.speedHook;
+                posTemp.y += 3 * speedHook;
                 GetComponent<Transform>().position = posTemp;
-                if (GetComponent<Transform>().position.y >= GameManager.instance.maxHook)
+                if (GetComponent<Transform>().position.y >= maxHook)
                 {
                     isUp = false;
                     isMove = true;

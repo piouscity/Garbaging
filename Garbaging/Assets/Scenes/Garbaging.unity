@@ -279,12 +279,10 @@ MonoBehaviour:
   trashController: {fileID: 1033234869}
   fishController: {fileID: 745658707}
   waterBallController: {fileID: 919333041}
+  hookController: {fileID: 1452513097}
   eventSystem: {fileID: 2124352536}
   scoreSound: {fileID: 520291975}
   level: 1
-  speedHook: 0.02
-  initSpeedHook: 0.02
-  maxHook: 9.1
   maxX: 10.5
   minX: 9.5
   maxY: 3
@@ -1120,6 +1118,12 @@ PrefabInstance:
       objectReference: {fileID: 1686044036}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d951e3e56af6646f8a32d57cb74d7877, type: 3}
+--- !u!1 &1452513097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8809968935543383350, guid: d951e3e56af6646f8a32d57cb74d7877,
+    type: 3}
+  m_PrefabInstance: {fileID: 1452513096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1498832631
 GameObject:
   m_ObjectHideFlags: 0

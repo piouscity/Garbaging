@@ -18,7 +18,7 @@ public class Trash : MonoBehaviour
     {
         if (isChoose)
         {
-            posTemp.y += 3 * GameManager.instance.speedHook;
+            posTemp.y += 3 * GameManager.instance.hookController.GetComponent<Hook>().speedHook;
             GetComponent<Transform>().position = posTemp;
             if (posTemp.y >= -GameManager.instance.minY)
             {
