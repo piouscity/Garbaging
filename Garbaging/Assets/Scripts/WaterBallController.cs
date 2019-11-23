@@ -14,8 +14,8 @@ public class WaterBallController : MonoBehaviour
             waterball,
             new Vector2(
                 Random.Range(
-                    -GameManager.instance.screenHeight, 
-                    GameManager.instance.screenHeight
+                    GameManager.instance.minX, 
+                    GameManager.instance.maxX
                 ),
                 GameManager.instance.minY - 0.5f
             ),

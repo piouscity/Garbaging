@@ -1047,12 +1047,12 @@ PrefabInstance:
     - target: {fileID: 9130781575601134448, guid: d951e3e56af6646f8a32d57cb74d7877,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.19
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 9130781575601134448, guid: d951e3e56af6646f8a32d57cb74d7877,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.03
+      value: 5.89
       objectReference: {fileID: 0}
     - target: {fileID: 9130781575601134448, guid: d951e3e56af6646f8a32d57cb74d7877,
         type: 3}
@@ -1119,6 +1119,26 @@ PrefabInstance:
       propertyPath: soundHookVsFish
       value: 
       objectReference: {fileID: 1686044036}
+    - target: {fileID: 2105382072041356277, guid: d951e3e56af6646f8a32d57cb74d7877,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.100531645
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105382072041356277, guid: d951e3e56af6646f8a32d57cb74d7877,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08638976
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105382072041356277, guid: d951e3e56af6646f8a32d57cb74d7877,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 4.003657
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105382072041356277, guid: d951e3e56af6646f8a32d57cb74d7877,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 6.279847
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d951e3e56af6646f8a32d57cb74d7877, type: 3}
 --- !u!1 &1452513097 stripped

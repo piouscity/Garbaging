@@ -20,7 +20,7 @@ public class Trash : MonoBehaviour
         {
             posTemp.y += 3 * GameManager.instance.hookController.GetComponent<Hook>().speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
             GetComponent<Transform>().position = posTemp;
-            if (posTemp.y >= -GameManager.instance.minY)
+            if (posTemp.y >= GameManager.instance.maxY)
             {
                 Destroy(gameObject);
                 manager.RemoveTrash(gameObject);

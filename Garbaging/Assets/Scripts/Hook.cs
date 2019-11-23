@@ -11,7 +11,6 @@ public class Hook : MonoBehaviour
 
     public float speedHook = 0.02f;
     public float initSpeedHook = 0.02f;
-    public float maxHook = 9.1f;
 
     bool isMove = true;
     bool isUp = false;
@@ -23,6 +22,12 @@ public class Hook : MonoBehaviour
         GetComponent<Rigidbody2D>().fixedAngle = true;
     }
 
+    public void SetBorder()
+    {
+        Vector3 initPosition = new Vector3(1, GameManager.instance.maxY, 0);
+        GetComponent<Transform>().position = initPosition;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -31,13 +36,13 @@ public class Hook : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {        
-                if (posTemp.x > -gameManager.screenHeight) 
+                if (posTemp.x > gameManager.minX) 
                     posTemp.x -= speedHook * Mathf.Pow(1.15f, gameManager.level);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 
-                if (posTemp.x < gameManager.screenHeight)
+                if (posTemp.x < gameManager.maxX)
                 {
                     posTemp.x += speedHook * Mathf.Pow(1.15f, gameManager.level);
                 }
@@ -50,7 +55,7 @@ public class Hook : MonoBehaviour
                 GetComponent<Rigidbody2D>().isKinematic = false;
                 posTemp.y -= 2 * speedHook * Mathf.Pow(1.15f, gameManager.level);
                 GetComponent<Transform>().position = posTemp;
-                if (GetComponent<Transform>().position.y <= 0)
+                if (GetComponent<Transform>().position.y <= gameManager.minY)
                 {
                     GetComponent<Rigidbody2D>().isKinematic = true;
                     isUp = true;
@@ -60,7 +65,7 @@ public class Hook : MonoBehaviour
             {
                 posTemp.y += 3 * speedHook * Mathf.Pow(1.15f, gameManager.level);
                 GetComponent<Transform>().position = posTemp;
-                if (GetComponent<Transform>().position.y >= maxHook)
+                if (GetComponent<Transform>().position.y >= gameManager.maxY)
                 {
                     isUp = false;
                     isMove = true;

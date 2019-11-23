@@ -12,21 +12,14 @@ public class GameManager : MonoBehaviour
     public GameObject waterBallController;
     public GameObject hookController;
     public GameObject eventSystem;
-
     public AudioSource scoreSound;
-
     public int level = 1;
-
     public float maxX;
     public float minX;
     public float maxY;
     public float minY;
-
-    public float screenHeight = 9.5f;
-
     public Text scoreText;
     int score = 0;
-
     public int endScene = 2;
 
     private void Awake()
@@ -49,6 +42,7 @@ public class GameManager : MonoBehaviour
         minY = ldCorner.y;
         maxX = ruCorner.x;
         maxY = ruCorner.y;
+        hookController.GetComponent<Hook>().SetBorder();
     }
     // Update is called once per frame
     void Update()
