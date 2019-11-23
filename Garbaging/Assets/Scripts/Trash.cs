@@ -18,12 +18,13 @@ public class Trash : MonoBehaviour
     {
         if (isChoose)
         {
-            posTemp.y += 3 * GameManager.instance.hookController.GetComponent<Hook>().speedHook;
+            posTemp.y += 3 * GameManager.instance.hookController.GetComponent<Hook>().speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
             GetComponent<Transform>().position = posTemp;
             if (posTemp.y >= -GameManager.instance.minY)
             {
                 Destroy(gameObject);
                 manager.RemoveTrash(gameObject);
+                GameManager.instance.AddScore();
             }
         }
     }

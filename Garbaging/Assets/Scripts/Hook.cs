@@ -30,7 +30,7 @@ public class Hook : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 
-                if (posTemp.x > -GameManager.instance.screenHeight) { posTemp.x -= speedHook; }
+                if (posTemp.x > -GameManager.instance.screenHeight) { posTemp.x -= speedHook * Mathf.Pow(1.15f, GameManager.instance.level); }
 
             }
             else if (Input.GetKey(KeyCode.RightArrow))
@@ -38,7 +38,7 @@ public class Hook : MonoBehaviour
                 
                 if (posTemp.x < GameManager.instance.screenHeight)
                 {
-                    posTemp.x += speedHook;
+                    posTemp.x += speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
                 }
             }
             GetComponent<Transform>().position = posTemp;
@@ -47,7 +47,7 @@ public class Hook : MonoBehaviour
         {
             if (!isUp) {
                 GetComponent<Rigidbody2D>().isKinematic = false;
-                posTemp.y -= 2 * speedHook;
+                posTemp.y -= 2 * speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
                 GetComponent<Transform>().position = posTemp;
                 if (GetComponent<Transform>().position.y <= 0)
                 {
@@ -57,13 +57,12 @@ public class Hook : MonoBehaviour
             }
             else
             {
-                posTemp.y += 3 * speedHook;
+                posTemp.y += 3 * speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
                 GetComponent<Transform>().position = posTemp;
                 if (GetComponent<Transform>().position.y >= maxHook)
                 {
                     isUp = false;
                     isMove = true;
-                    GameManager.instance.AddScore();
                 }
             }
         }
