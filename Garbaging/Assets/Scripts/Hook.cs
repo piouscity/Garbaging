@@ -30,17 +30,16 @@ public class Hook : MonoBehaviour
         if (isMove)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                
-                if (posTemp.x > -GameManager.instance.screenHeight) { posTemp.x -= speedHook * Mathf.Pow(1.15f, GameManager.instance.level); }
-
+            {        
+                if (posTemp.x > -gameManager.screenHeight) 
+                    posTemp.x -= speedHook * Mathf.Pow(1.15f, gameManager.level);
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 
-                if (posTemp.x < GameManager.instance.screenHeight)
+                if (posTemp.x < gameManager.screenHeight)
                 {
-                    posTemp.x += speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
+                    posTemp.x += speedHook * Mathf.Pow(1.15f, gameManager.level);
                 }
             }
             GetComponent<Transform>().position = posTemp;
@@ -49,7 +48,7 @@ public class Hook : MonoBehaviour
         {
             if (!isUp) {
                 GetComponent<Rigidbody2D>().isKinematic = false;
-                posTemp.y -= 2 * speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
+                posTemp.y -= 2 * speedHook * Mathf.Pow(1.15f, gameManager.level);
                 GetComponent<Transform>().position = posTemp;
                 if (GetComponent<Transform>().position.y <= 0)
                 {
@@ -59,7 +58,7 @@ public class Hook : MonoBehaviour
             }
             else
             {
-                posTemp.y += 3 * speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
+                posTemp.y += 3 * speedHook * Mathf.Pow(1.15f, gameManager.level);
                 GetComponent<Transform>().position = posTemp;
                 if (GetComponent<Transform>().position.y >= maxHook)
                 {
@@ -83,7 +82,7 @@ public class Hook : MonoBehaviour
             if (!isUp)
             {
                 soundHookVsFish.Play();
-                GameManager.instance.SetGameOver();
+                gameManager.SetGameOver();
             }
         }
 
