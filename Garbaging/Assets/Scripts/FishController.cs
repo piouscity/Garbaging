@@ -8,13 +8,28 @@ public class FishController : MonoBehaviour
     public GameObject fishType1;
 	public GameObject fishType2;
 	public GameObject fishType3;
-
+    public GameManager gameManager;
+    public float padding;
 
     void CreateFish(GameObject fish, Vector2 position)
     {
         GameObject newFish = Instantiate(fish, position, Quaternion.identity);
         newFish.GetComponent<Fish>().manager = gameObject.GetComponent<FishController>();
         fishList.Add(newFish);
+    }
+    void CreateFish(GameObject fish)
+    {
+        int side = Random.Range(0, 2);
+        float randomPadding = Random.Range(0, padding);
+        CreateFish(
+            fish, 
+            new Vector2(
+                side==0 ? 
+                    gameManager.minX - randomPadding: 
+                    gameManager.maxX + randomPadding, 
+                Random.Range(gameManager.minY, gameManager.maxY - padding)
+            )
+        );
     }
     public void RemoveFish(GameObject fish)
     {
@@ -23,15 +38,15 @@ public class FishController : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameManager.instance;
+        padding = (gameManager.maxY - gameManager.minY) / 4;
         fishList = new List<GameObject>();
-        CreateFish(fishType1, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-        CreateFish(fishType2, new Vector2(Random.Range(GameManager.instance.minX, GameManager.instance.maxX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-        CreateFish(fishType1, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-        CreateFish(fishType2, new Vector2(Random.Range(GameManager.instance.minX, GameManager.instance.maxX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-        CreateFish(fishType3, new Vector2(Random.Range(GameManager.instance.minX, GameManager.instance.maxX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-        CreateFish(fishType1, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-        CreateFish(fishType2, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-
+        for(int i=0; i<2; ++i)
+        {
+            CreateFish(fishType1);
+            CreateFish(fishType2);
+            CreateFish(fishType3);
+        }
     }
 
     // Update is called once per frame
@@ -39,9 +54,9 @@ public class FishController : MonoBehaviour
     {
         if (fishList.Count <= 4)
         {
-            CreateFish(fishType1, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-            CreateFish(fishType3, new Vector2(Random.Range(GameManager.instance.minX, GameManager.instance.maxX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
-            CreateFish(fishType2, new Vector2(Random.Range(-GameManager.instance.maxX, -GameManager.instance.minX), Random.Range(GameManager.instance.minY, GameManager.instance.maxY)));
+            CreateFish(fishType1);
+            CreateFish(fishType2);
+            CreateFish(fishType3);
         }
     }
 }

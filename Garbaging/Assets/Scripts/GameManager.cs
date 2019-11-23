@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour
 
     public int level = 1;
 
-    public float maxX = 10.5f;
-    public float minX = 9.5f;
-    public float maxY = 3f;
-    public float minY = -4.5f;
+    public float maxX;
+    public float minX;
+    public float maxY;
+    public float minY;
 
     public float screenHeight = 9.5f;
 
@@ -42,7 +42,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Camera camera = Camera.main;
+        Vector2 ldCorner = camera.ViewportToWorldPoint(new Vector3(0, 0f, camera.nearClipPlane));
+        Vector2 ruCorner = camera.ViewportToWorldPoint(new Vector3(1f, 1f, camera.nearClipPlane));
+        minX = ldCorner.x;
+        minY = ldCorner.y;
+        maxX = ruCorner.x;
+        maxY = ruCorner.y;
     }
     // Update is called once per frame
     void Update()

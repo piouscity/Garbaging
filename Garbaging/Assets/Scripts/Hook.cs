@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
+    public GameManager gameManager;
     public AudioSource soundHookMoved;
     public AudioSource soundHookVsGarbage;
     public AudioSource soundHookVsFish;
@@ -18,6 +19,7 @@ public class Hook : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
+        gameManager = GameManager.instance;
         GetComponent<Rigidbody2D>().fixedAngle = true;
     }
 

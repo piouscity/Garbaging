@@ -15,19 +15,17 @@ public class TrashController : MonoBehaviour
     public GameObject trashType8;
     public GameObject trashType9;
     public GameObject trashType10;
+    public GameManager gameManager;
 
     void CreateTrash(GameObject trash)
     {
         GameObject newTrash = Instantiate(
             trash, 
             new Vector2(
+                Random.Range(gameManager.minX, gameManager.maxX), 
                 Random.Range(
-                    -GameManager.instance.screenHeight / 2, 
-                    GameManager.instance.screenHeight / 2
-                ), 
-                Random.Range(
-                    GameManager.instance.minY, 
-                    GameManager.instance.maxY
+                    gameManager.minY, 
+                    (gameManager.minY + gameManager.maxY) / 2
                 )
             ), 
             Quaternion.identity
@@ -57,6 +55,7 @@ public class TrashController : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameManager.instance;
         listTrash = new List<GameObject>();
         CreateListTrash();
     }

@@ -7,7 +7,7 @@ public class Fish : MonoBehaviour
     public FishController manager;
     private int direction;
     public float speed = 0.01f;
-    public bool isRight = false;
+    public bool movingRight = false;
 
     Vector2 posTemp;
 
@@ -16,12 +16,10 @@ public class Fish : MonoBehaviour
     void Start()
     {
         posTemp = GetComponent<Transform>().position;
-        if (posTemp.x <= -GameManager.instance.minX) {
-            isRight = true;
+        if (posTemp.x <= GameManager.instance.minX) {
+            movingRight = true;
         }
-
         speed = speed * Mathf.Pow(1.2f, GameManager.instance.level) + (float)(Random.Range(1,3) * 1.0 / 100);
-
     }
     public int temp = 1;
     // Update is called once per frame
@@ -34,10 +32,10 @@ public class Fish : MonoBehaviour
             System.Random random = new System.Random();
             if (temp % 180 == 0 && random.Next(24) % 15 == 0)
             {
-                isRight = !isRight;
+                movingRight = !movingRight;
             }
         }
-        if (isRight)
+        if (movingRight)
         {
             moveRight();
         }
@@ -46,10 +44,10 @@ public class Fish : MonoBehaviour
             moveLeft();
         }
         GetComponent<Transform>().position = posTemp;
-
-        if (GetComponent<Transform>().position.x >= GameManager.instance.maxX || GetComponent<Transform>().position.x <= -GameManager.instance.maxX)
+     
+        if (screenPassed())
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
             manager.RemoveFish(gameObject);
         }
     }
@@ -64,5 +62,13 @@ public class Fish : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().flipX = true;
         posTemp.x += speed;
+    }
+
+    bool screenPassed()
+    {
+        if (movingRight)
+            return posTemp.x > GameManager.instance.maxX;
+        else
+            return posTemp.x < GameManager.instance.minX;
     }
 }
