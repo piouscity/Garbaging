@@ -9,7 +9,7 @@
  - Garbaging hướng đến đối tượng người chơi là thiếu nhi để có thể định hướng tư duy bảo vệ biển ngay khi còn nhỏ của các bạn nhỏ nên đồ hoạ cũng sẽ là các tạo hình dễ thương gây thích thú cho các bé. 
  - Và cuối cùng cũng như là thông điệp quan trọng nhât của tựa game Garbaging đó chính là SAVE THE OCEAN - STOP OCEAN PLASTIC POLLUTION và thông điệp đó cũng được hiện lên mỗi khi người chơi bắt đầu trò chơi. 
 ## Phiên bản Unity:
- 2019.1.14.f1
+ 2019.1.14f1
 ## Resource
  - Audio: https://www.sounds-resource.com
  - Font: https://www.1001fonts.com
