@@ -55,6 +55,7 @@ public class FishController : MonoBehaviour
     {
         if (fishList.Count <= 4)
         {
+            gameManager = GameManager.instance;
             CreateFish(fishType1);
             CreateFish(fishType2);
             CreateFish(fishType3);

@@ -8,8 +8,8 @@ public class Fish : MonoBehaviour
     public FishController manager;
     private int direction;
     public const float BASE_SPEED = 0.022f;
-    public const float SPEED_UP = 1.2f;
-    public float speed;
+    public const float SPEED_UP = 1.4f;
+    public float speed = 0;
     public bool movingRight = false;
 
     Vector2 posTemp;
@@ -23,8 +23,6 @@ public class Fish : MonoBehaviour
         if (posTemp.x <= gameManager.minX) {
             movingRight = true;
         }
-        float randomAppend = Random.Range(0, 4) * 1f / 100;
-        speed = BASE_SPEED + randomAppend;
     }
     public int temp = 1;
     // Update is called once per frame
