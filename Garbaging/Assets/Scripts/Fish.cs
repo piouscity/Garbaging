@@ -7,7 +7,7 @@ public class Fish : MonoBehaviour
     public GameManager gameManager;
     public FishController manager;
     private int direction;
-    public const float BASE_SPEED = 0.01f;
+    public const float BASE_SPEED = 0.022f;
     public const float SPEED_UP = 1.2f;
     public float speed;
     public bool movingRight = false;
