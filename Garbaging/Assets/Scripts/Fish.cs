@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Fish : MonoBehaviour
 {
+    public GameManager gameManager;
     public FishController manager;
     private int direction;
-    public float speed = 0.01f;
+    public const float BASE_SPEED = 0.01f;
+    public const float SPEED_UP = 1.2f;
+    public float speed;
     public bool movingRight = false;
 
     Vector2 posTemp;
@@ -15,18 +18,20 @@ public class Fish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameManager.instance;
         posTemp = GetComponent<Transform>().position;
-        if (posTemp.x <= GameManager.instance.minX) {
+        if (posTemp.x <= gameManager.minX) {
             movingRight = true;
         }
-        speed = speed * Mathf.Pow(1.2f, GameManager.instance.level) + (float)(Random.Range(1,3) * 1.0 / 100);
+        float randomAppend = Random.Range(0, 4) * 1f / 100;
+        speed = BASE_SPEED + randomAppend;
     }
     public int temp = 1;
     // Update is called once per frame
     void Update()
     {
 
-        if (GameManager.instance.level >= 3)
+        if (gameManager.level >= 3)
         {
             temp += 1;
             System.Random random = new System.Random();
@@ -52,6 +57,12 @@ public class Fish : MonoBehaviour
         }
     }
 
+    public void UpdateLevel(int level)
+    {
+        float randomAppend = Random.Range(0, 4) * 1f / 100;
+        speed = BASE_SPEED * Mathf.Pow(SPEED_UP, level) + randomAppend;
+    }
+
     void moveLeft()
     {
         GetComponent<SpriteRenderer>().flipX = false;
@@ -67,8 +78,8 @@ public class Fish : MonoBehaviour
     bool screenPassed()
     {
         if (movingRight)
-            return posTemp.x > GameManager.instance.maxX;
+            return posTemp.x > gameManager.maxX;
         else
-            return posTemp.x < GameManager.instance.minX;
+            return posTemp.x < gameManager.minX;
     }
 }

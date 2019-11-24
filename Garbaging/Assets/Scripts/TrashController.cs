@@ -19,10 +19,11 @@ public class TrashController : MonoBehaviour
 
     void CreateTrash(GameObject trash)
     {
+        float paddingHorizon = (gameManager.maxX - gameManager.minX) / 6;
         GameObject newTrash = Instantiate(
             trash, 
             new Vector2(
-                Random.Range(gameManager.minX, gameManager.maxX), 
+                Random.Range(gameManager.minX + paddingHorizon, gameManager.maxX - paddingHorizon), 
                 Random.Range(
                     gameManager.minY, 
                     (gameManager.minY + gameManager.maxY) / 2
@@ -67,5 +68,10 @@ public class TrashController : MonoBehaviour
         {
             CreateListTrash();
         }
+    }
+
+    public void UpdateLevel(int level)
+    {
+
     }
 }

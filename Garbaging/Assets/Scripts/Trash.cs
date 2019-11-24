@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour
 {
+    public GameManager gameManager;
     public TrashController manager;
     Vector2 posTemp;
     bool isChoose = false;
@@ -11,6 +12,7 @@ public class Trash : MonoBehaviour
     void Start()
     {
         posTemp = GetComponent<Transform>().position;
+        gameManager = GameManager.instance;
     }
 
     // Update is called once per frame
@@ -18,7 +20,7 @@ public class Trash : MonoBehaviour
     {
         if (isChoose)
         {
-            posTemp.y += 3 * GameManager.instance.hookController.GetComponent<Hook>().speedHook * Mathf.Pow(1.15f, GameManager.instance.level);
+            posTemp.y += gameManager.GetPullSpeed();
             GetComponent<Transform>().position = posTemp;
             if (posTemp.y >= GameManager.instance.maxY)
             {

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject hookController;
     public GameObject eventSystem;
     public AudioSource scoreSound;
+    public const int TARGET_OF_LEVEL = 5;
     public int level = 1;
     public float maxX;
     public float minX;
@@ -47,8 +48,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Set up level
-        level = score / 5 + 1;
+    }
+
+    public float GetPullSpeed()
+    {
+        return hookController.GetComponent<Hook>().GetPullSpeed();
     }
 
     public void AddScore()
@@ -56,6 +60,18 @@ public class GameManager : MonoBehaviour
         scoreSound.Play();
         score++;
         scoreText.text = score.ToString();
+        if (score % TARGET_OF_LEVEL == 0)
+        {
+            ++level;
+            hookController.GetComponent<Hook>().UpdateLevel(level);
+            fishController.GetComponent<FishController>().UpdateLevel(level);
+            trashController.GetComponent<TrashController>().UpdateLevel(level);
+        }
+    }
+
+    public int GetLevel()
+    {
+        return level;
     }
     public void SetGameOver()
     {

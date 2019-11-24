@@ -15,6 +15,7 @@ public class FishController : MonoBehaviour
     {
         GameObject newFish = Instantiate(fish, position, Quaternion.identity);
         newFish.GetComponent<Fish>().manager = gameObject.GetComponent<FishController>();
+        newFish.GetComponent<Fish>().UpdateLevel(gameManager.GetLevel());
         fishList.Add(newFish);
     }
     void CreateFish(GameObject fish)
@@ -58,5 +59,11 @@ public class FishController : MonoBehaviour
             CreateFish(fishType2);
             CreateFish(fishType3);
         }
+    }
+
+    public void UpdateLevel(int level)
+    {
+        for (int i = 0; i < fishList.Count; ++i)
+            fishList[i].GetComponent<Fish>().UpdateLevel(level);
     }
 }

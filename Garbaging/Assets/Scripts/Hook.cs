@@ -9,8 +9,11 @@ public class Hook : MonoBehaviour
     public AudioSource soundHookVsGarbage;
     public AudioSource soundHookVsFish;
 
-    public float speedHook = 0.02f;
-    public float initSpeedHook = 0.02f;
+    public const float SPEED_UP = 1.15f;
+    public const float BASE_SPEED = 0.05f;
+    public const float PULL_SPEED = 3f;
+    public const float DROP_SPEED = 2f;
+    public float speedHook = BASE_SPEED;
 
     bool isMove = true;
     bool isUp = false;
@@ -35,16 +38,16 @@ public class Hook : MonoBehaviour
         if (isMove)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
-            {        
-                if (posTemp.x > gameManager.minX) 
-                    posTemp.x -= speedHook * Mathf.Pow(1.15f, gameManager.level);
+            {
+                if (posTemp.x > gameManager.minX)
+                    posTemp.x -= speedHook;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
-                
+
                 if (posTemp.x < gameManager.maxX)
                 {
-                    posTemp.x += speedHook * Mathf.Pow(1.15f, gameManager.level);
+                    posTemp.x += speedHook;
                 }
             }
             GetComponent<Transform>().position = posTemp;
@@ -53,7 +56,7 @@ public class Hook : MonoBehaviour
         {
             if (!isUp) {
                 GetComponent<Rigidbody2D>().isKinematic = false;
-                posTemp.y -= 2 * speedHook * Mathf.Pow(1.15f, gameManager.level);
+                posTemp.y -= DROP_SPEED * speedHook;
                 GetComponent<Transform>().position = posTemp;
                 if (GetComponent<Transform>().position.y <= gameManager.minY)
                 {
@@ -63,7 +66,7 @@ public class Hook : MonoBehaviour
             }
             else
             {
-                posTemp.y += 3 * speedHook * Mathf.Pow(1.15f, gameManager.level);
+                posTemp.y += PULL_SPEED * speedHook;
                 GetComponent<Transform>().position = posTemp;
                 if (GetComponent<Transform>().position.y >= gameManager.maxY)
                 {
@@ -79,6 +82,15 @@ public class Hook : MonoBehaviour
             isMove = false;
         }
 
+    }
+
+    public void UpdateLevel(int level)
+    {
+        speedHook = BASE_SPEED * Mathf.Pow(SPEED_UP, level);
+    }
+    public float GetPullSpeed()
+    {
+        return PULL_SPEED * speedHook;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
