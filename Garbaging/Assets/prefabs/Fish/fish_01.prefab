@@ -114,8 +114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca409da848394498590f031422579e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  manager: {fileID: 0}
   speed: 0.01
-  isRight: 0
+  movingRight: 0
+  isDie: 0
+  dieAni: {fileID: 1610793054433050684, guid: 017a597ad7468499b966d7853d061ab8, type: 3}
   temp: 1
 --- !u!60 &8316903133720816877
 PolygonCollider2D:

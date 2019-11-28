@@ -10,14 +10,16 @@ public class Hook : MonoBehaviour
     public AudioSource soundHookVsFish;
 
     public const float MAX_SPEED = 0.065f;
-    public const float SPEED_UP = 1.15f;
-    public const float BASE_SPEED = 0.05f;
+    public const float SPEED_UP = 1.015f;
+    public const float BASE_SPEED = 0.04f;
     public const float PULL_SPEED = 3f;
     public const float DROP_SPEED = 2f;
     public float speedHook = BASE_SPEED;
+    public bool isDie = false;
 
     bool isMove = true;
     bool isUp = false;
+    int temp = 1;
     // Start is called before the first frame update
     [System.Obsolete]
     void Start()
@@ -35,52 +37,64 @@ public class Hook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 posTemp = GetComponent<Transform>().position;
-        if (isMove)
+        if (!isDie)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))
+            Vector2 posTemp = GetComponent<Transform>().position;
+            if (isMove)
             {
-                if (posTemp.x > gameManager.minX)
-                    posTemp.x -= speedHook;
-            }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    if (posTemp.x > gameManager.minX)
+                        posTemp.x -= speedHook;
+                }
+                else if (Input.GetKey(KeyCode.RightArrow))
+                {
 
-                if (posTemp.x < gameManager.maxX)
-                {
-                    posTemp.x += speedHook;
+                    if (posTemp.x < gameManager.maxX)
+                    {
+                        posTemp.x += speedHook;
+                    }
                 }
-            }
-            GetComponent<Transform>().position = posTemp;
-        }
-        else
-        {
-            if (!isUp) {
-                GetComponent<Rigidbody2D>().isKinematic = false;
-                posTemp.y -= DROP_SPEED * speedHook;
                 GetComponent<Transform>().position = posTemp;
-                if (GetComponent<Transform>().position.y <= gameManager.minY)
-                {
-                    GetComponent<Rigidbody2D>().isKinematic = true;
-                    isUp = true;
-                }
             }
             else
             {
-                posTemp.y += PULL_SPEED * speedHook;
-                GetComponent<Transform>().position = posTemp;
-                if (GetComponent<Transform>().position.y >= gameManager.maxY)
+                if (!isUp)
                 {
-                    isUp = false;
-                    isMove = true;
+                    GetComponent<Rigidbody2D>().isKinematic = false;
+                    posTemp.y -= DROP_SPEED * speedHook;
+                    GetComponent<Transform>().position = posTemp;
+                    if (GetComponent<Transform>().position.y <= gameManager.minY)
+                    {
+                        GetComponent<Rigidbody2D>().isKinematic = true;
+                        isUp = true;
+                    }
+                }
+                else
+                {
+                    posTemp.y += PULL_SPEED * speedHook;
+                    GetComponent<Transform>().position = posTemp;
+                    if (GetComponent<Transform>().position.y >= gameManager.maxY)
+                    {
+                        isUp = false;
+                        isMove = true;
+                    }
                 }
             }
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (isMove)
+                    soundHookMoved.Play();
+                isMove = false;
+            }
+        } else
         {
-            if (isMove)
-                soundHookMoved.Play();
-            isMove = false;
+            temp += 1;
+            print(temp);
+            if (temp == 30)
+            {
+                GameManager.instance.SetGameOver();
+            }
         }
 
     }
@@ -100,7 +114,8 @@ public class Hook : MonoBehaviour
             if (!isUp)
             {
                 soundHookVsFish.Play();
-                gameManager.SetGameOver();
+                isDie = true;
+
             }
         }
 

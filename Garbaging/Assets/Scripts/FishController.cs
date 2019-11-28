@@ -35,6 +35,7 @@ public class FishController : MonoBehaviour
     public void RemoveFish(GameObject fish)
     {
         fishList.Remove(fish);
+        
     }
 
     void Start()

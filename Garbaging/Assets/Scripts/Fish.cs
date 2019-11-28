@@ -11,6 +11,9 @@ public class Fish : MonoBehaviour
     public const float SPEED_UP = 1.4f;
     public float speed = 0;
     public bool movingRight = false;
+    public bool isDie = false;
+    public bool drawAni = false;
+    public GameObject dieAni;
 
     Vector2 posTemp;
 
@@ -38,13 +41,16 @@ public class Fish : MonoBehaviour
                 movingRight = !movingRight;
             }
         }
-        if (movingRight)
+        if (!isDie)
         {
-            moveRight();
-        }
-        else
-        {
-            moveLeft();
+            if (movingRight)
+            {
+                moveRight();
+            }
+            else
+            {
+                moveLeft();
+            }
         }
         GetComponent<Transform>().position = posTemp;
      
@@ -52,6 +58,23 @@ public class Fish : MonoBehaviour
         {
             Destroy(gameObject);
             manager.RemoveFish(gameObject);
+        }
+        if (drawAni)
+        {
+            _ = Instantiate(dieAni, GetComponent<Transform>().position, Quaternion.identity);
+            Destroy(gameObject);
+            manager.RemoveFish(gameObject);
+            drawAni = false;
+        }
+        if (isDie)
+        {
+            temp += 1;
+            print(temp);
+            if (temp == 30)
+            {
+                GameManager.instance.SetGameOver();
+            }
+            
         }
     }
 
@@ -79,5 +102,20 @@ public class Fish : MonoBehaviour
             return posTemp.x > gameManager.maxX;
         else
             return posTemp.x < gameManager.minX;
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hook"))
+        {
+            isDie = true;
+            drawAni = true;
+            temp = 1;
+
+        }
+
+        if (collision.gameObject.CompareTag("Trash"))
+        {
+            // Do something
+        }
     }
 }
