@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject fishController;
     public GameObject waterBallController;
     public GameObject hookController;
+    public GameObject timeController;
     public GameObject eventSystem;
     public AudioSource scoreSound;
     public const int TARGET_OF_LEVEL = 5;
@@ -20,9 +21,9 @@ public class GameManager : MonoBehaviour
     public float maxY;
     public float minY;
     public Text scoreText;
-    int score = 0;
+    public int score = 0;
     public int endScene = 2;
-
+    public bool isPause = false;
     private void Awake()
     {
         if (instance == null)
@@ -53,6 +54,11 @@ public class GameManager : MonoBehaviour
     public float GetPullSpeed()
     {
         return hookController.GetComponent<Hook>().GetPullSpeed();
+    }
+
+    public void setPause(bool pause)
+    {
+        isPause = pause;
     }
 
     public void AddScore()

@@ -7,8 +7,8 @@ public class Fish : MonoBehaviour
     public GameManager gameManager;
     public FishController manager;
     private int direction;
-    public const float BASE_SPEED = 0.022f;
-    public const float SPEED_UP = 1.4f;
+    public const float BASE_SPEED = 0.015f;
+    public const float SPEED_UP = 1.2f;
     public float speed = 0;
     public bool movingRight = false;
     public bool isDie = false;
@@ -41,7 +41,7 @@ public class Fish : MonoBehaviour
                 movingRight = !movingRight;
             }
         }
-        if (!isDie)
+        if (!isDie && !GameManager.instance.isPause)
         {
             if (movingRight)
             {

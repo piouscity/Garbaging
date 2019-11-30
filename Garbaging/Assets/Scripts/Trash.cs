@@ -41,17 +41,17 @@ public class Trash : MonoBehaviour
             }
         }
 
-        if (isMove && GameManager.instance.level >= 3)
+        if (isMove && GameManager.instance.level >= 3 && !GameManager.instance.isPause)
         {
            
             if (isLeft)
             {
-                posTemp.x += x / 1000;
+                posTemp.x += x / 10000 * (GameManager.instance.level - 3);
             } else
             {
-                posTemp.x -= x / 1000;
+                posTemp.x -= x / 10000 * (GameManager.instance.level - 3);
             }
-            posTemp.y = posTemp.y + random.Next(2,4) * 1.0f / 300.0f * Mathf.Sin(3.14f + x);
+            posTemp.y = posTemp.y + random.Next(2,4) * 1.0f / 200.0f * Mathf.Sin(3.14f + x);
             x += 0.05f;
             GetComponent<Transform>().position = posTemp;
         }

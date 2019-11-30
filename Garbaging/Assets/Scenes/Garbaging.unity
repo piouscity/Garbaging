@@ -245,7 +245,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &145141778
 GameObject:
@@ -280,6 +280,7 @@ MonoBehaviour:
   fishController: {fileID: 745658707}
   waterBallController: {fileID: 919333041}
   hookController: {fileID: 1452513097}
+  timeController: {fileID: 222642321}
   eventSystem: {fileID: 2124352536}
   scoreSound: {fileID: 520291975}
   level: 1
@@ -288,6 +289,7 @@ MonoBehaviour:
   maxY: 3
   minY: -4.5
   scoreText: {fileID: 2051813496}
+  score: 0
   endScene: 2
 --- !u!4 &145141781
 Transform:
@@ -428,7 +430,54 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &222642321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222642323}
+  - component: {fileID: 222642322}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &222642322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222642321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a822ab95c89c24420a52b3ae729505bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 5586218082929818023, guid: ff0b126c731d24f88b0c8f34514eeaff, type: 3}
+  timer: {fileID: 9015567458442484219, guid: ff075ae6b00c44b25898dd6b972ecd05, type: 3}
+  gameManager: {fileID: 0}
+  isShowTimer: 0
+--- !u!4 &222642323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222642321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.80116946, y: -1.0067686, z: -4.2439837}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274805308
 GameObject:
@@ -786,7 +835,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656254739
 GameObject:
@@ -913,7 +962,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &710651547
 GameObject:
@@ -986,7 +1035,6 @@ MonoBehaviour:
     type: 3}
   fishType3: {fileID: 1746111503514482786, guid: 039c513fc7c9a4ac28b72168b63f8fcc,
     type: 3}
-  dieAni: {fileID: 1610793054433050684, guid: 017a597ad7468499b966d7853d061ab8, type: 3}
   gameManager: {fileID: 0}
   padding: 0
 --- !u!4 &745658709
@@ -1120,7 +1168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &948120462
 GameObject:
@@ -1253,7 +1301,7 @@ RectTransform:
   - {fileID: 1684525370}
   - {fileID: 1172826332}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1560,7 +1608,7 @@ PrefabInstance:
     - target: {fileID: 9130781575601134448, guid: d951e3e56af6646f8a32d57cb74d7877,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9130781575601134448, guid: d951e3e56af6646f8a32d57cb74d7877,
         type: 3}
@@ -1938,7 +1986,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2051813494
 GameObject:
@@ -2084,7 +2132,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2124352540
 MonoBehaviour:
