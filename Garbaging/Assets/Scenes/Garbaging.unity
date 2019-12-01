@@ -291,6 +291,7 @@ MonoBehaviour:
   scoreText: {fileID: 2051813496}
   score: 0
   endScene: 2
+  isPause: 0
 --- !u!4 &145141781
 Transform:
   m_ObjectHideFlags: 0
@@ -463,8 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 5586218082929818023, guid: ff0b126c731d24f88b0c8f34514eeaff, type: 3}
   timer: {fileID: 9015567458442484219, guid: ff075ae6b00c44b25898dd6b972ecd05, type: 3}
-  gameManager: {fileID: 0}
-  isShowTimer: 0
+  isAddTime: 0
 --- !u!4 &222642323
 Transform:
   m_ObjectHideFlags: 0

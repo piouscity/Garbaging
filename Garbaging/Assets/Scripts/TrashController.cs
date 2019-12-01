@@ -15,7 +15,10 @@ public class TrashController : MonoBehaviour
     public GameObject trashType8;
     public GameObject trashType9;
     public GameObject trashType10;
+    public GameObject plusAni;
     public GameManager gameManager;
+    public bool isHideAniPlus = true;
+    int temp = 0;
 
     void CreateTrash(GameObject trash)
     {
@@ -33,6 +36,28 @@ public class TrashController : MonoBehaviour
         );
         newTrash.GetComponent<Trash>().manager = GetComponent<TrashController>();
         listTrash.Add(newTrash);
+    }
+
+    public GameObject newPlusAni;
+
+    public void CreatePlusAni(Vector2 position)
+    {
+        newPlusAni = Instantiate(
+            plusAni,
+            new Vector2(position.x , position.y - 0.5f),
+            Quaternion.identity
+        );
+    }
+
+    public void setHidePlusAni(bool isHide)
+    {
+        print("Hoang");
+        isHideAniPlus = isHide;
+    }
+
+    public void RemovePlusAni()
+    {
+        Destroy(newPlusAni);
     }
 
     public void RemoveTrash(GameObject trash)
@@ -59,6 +84,7 @@ public class TrashController : MonoBehaviour
         gameManager = GameManager.instance;
         listTrash = new List<GameObject>();
         CreateListTrash();
+       
     }
 
     // Update is called once per frame
@@ -67,6 +93,17 @@ public class TrashController : MonoBehaviour
         if (listTrash.Count == 0)
         {
             CreateListTrash();
+        }
+        if (!isHideAniPlus)
+        {
+            print(temp);
+            temp += 1;
+            if (temp == 60)
+            {
+                RemovePlusAni();
+                isHideAniPlus = true;
+                temp = 0;
+            }
         }
     }
 

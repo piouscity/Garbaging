@@ -27,6 +27,7 @@ public class Trash : MonoBehaviour
     }
     float x = 1f;
     // Update is called once per frame
+
     void Update()
     {
         if (isChoose)
@@ -35,11 +36,16 @@ public class Trash : MonoBehaviour
             GetComponent<Transform>().position = posTemp;
             if (posTemp.y >= GameManager.instance.maxY)
             {
-                Destroy(gameObject);
+                
+                manager.CreatePlusAni(GetComponent<Transform>().position);
+                manager.setHidePlusAni(false);
                 manager.RemoveTrash(gameObject);
+                Destroy(gameObject);
                 GameManager.instance.AddScore();
             }
         }
+
+        
 
         if (isMove && GameManager.instance.level >= 3 && !GameManager.instance.isPause)
         {
@@ -59,6 +65,7 @@ public class Trash : MonoBehaviour
 
         if (screenPassed())
         {
+            
             Destroy(gameObject);
             manager.RemoveTrash(gameObject);
         }
