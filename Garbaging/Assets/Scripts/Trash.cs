@@ -47,15 +47,15 @@ public class Trash : MonoBehaviour
 
         
 
-        if (isMove && GameManager.instance.level >= 3 && !GameManager.instance.isFreezing)
+        if (isMove && GameManager.instance.level >= 2 && !GameManager.instance.isFreezing)
         {
            
             if (isLeft)
             {
-                posTemp.x += x / 10000 * (GameManager.instance.level - 3);
+                posTemp.x += x / 10000 * Mathf.Max(0, (GameManager.instance.level - 3));
             } else
             {
-                posTemp.x -= x / 10000 * (GameManager.instance.level - 3);
+                posTemp.x -= x / 10000 * Mathf.Max(0, (GameManager.instance.level - 3));
             }
             posTemp.y = posTemp.y + random.Next(2,4) * 1.0f / 200.0f * Mathf.Sin(3.14f + x);
             x += 0.05f;
