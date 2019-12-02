@@ -64,7 +64,7 @@ public class TimeManager : MonoBehaviour
 
         if (listTime.Count > 0)
         {
-            if (Input.GetKeyDown(KeyCode.B) && !GameManager.instance.isPause)
+            if (Input.GetKeyDown(KeyCode.B) && !GameManager.instance.isFreezing)
             {
                 GameManager.instance.setPause(true);
                 RemoveTime();
@@ -79,7 +79,7 @@ public class TimeManager : MonoBehaviour
             }
         }
 
-        if (GameManager.instance.isPause)
+        if (GameManager.instance.isFreezing && !GameManager.instance.isPause)
         {
             index += 1;
             if (index == 600)

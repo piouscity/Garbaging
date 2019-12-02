@@ -41,7 +41,7 @@ public class Fish : MonoBehaviour
                 movingRight = !movingRight;
             }
         }
-        if (!isDie && !GameManager.instance.isPause)
+        if (!isDie && !gameManager.isPause && !gameManager.isFreezing)
         {
             if (movingRight)
             {

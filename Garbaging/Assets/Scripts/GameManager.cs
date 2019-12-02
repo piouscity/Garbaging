@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject timeController;
     public GameObject eventSystem;
     public AudioSource scoreSound;
+    public GameObject PauseScene;
     public const int TARGET_OF_LEVEL = 5;
     public int level = 1;
     public float maxX;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public Text scoreText;
     public int score = 0;
     public int endScene = 2;
+    public bool isFreezing = false;
     public bool isPause = false;
     private void Awake()
     {
@@ -49,6 +51,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            isPause = !isPause;
+            PauseScene.SetActive(isPause);
+        }
     }
 
     public float GetPullSpeed()
@@ -58,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void setPause(bool pause)
     {
-        isPause = pause;
+        isFreezing = pause;
     }
 
     public void AddScore()

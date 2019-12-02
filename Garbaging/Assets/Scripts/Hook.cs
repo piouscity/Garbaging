@@ -37,7 +37,7 @@ public class Hook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isDie)
+        if (!isDie && !gameManager.isPause)
         {
             Vector2 posTemp = GetComponent<Transform>().position;
             if (isMove)
@@ -87,7 +87,7 @@ public class Hook : MonoBehaviour
                     soundHookMoved.Play();
                 isMove = false;
             }
-        } else
+        } else if (isDie)
         {
             temp += 1;
             print(temp);

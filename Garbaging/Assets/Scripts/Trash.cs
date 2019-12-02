@@ -47,7 +47,7 @@ public class Trash : MonoBehaviour
 
         
 
-        if (isMove && GameManager.instance.level >= 3 && !GameManager.instance.isPause)
+        if (isMove && GameManager.instance.level >= 3 && !GameManager.instance.isFreezing)
         {
            
             if (isLeft)
