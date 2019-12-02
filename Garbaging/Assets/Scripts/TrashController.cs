@@ -53,7 +53,6 @@ public class TrashController : MonoBehaviour
 
     public void setHidePlusAni(bool isHide)
     {
-        print("Hoang");
         isHideAniPlus = isHide;
     }
 
@@ -98,7 +97,6 @@ public class TrashController : MonoBehaviour
         }
         if (!isHideAniPlus)
         {
-            print(temp);
             temp += 1;
             if (temp == 30)
             {

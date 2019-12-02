@@ -69,7 +69,6 @@ public class Fish : MonoBehaviour
         if (isDie)
         {
             temp += 1;
-            print(temp);
             if (temp == 30)
             {
                 GameManager.instance.SetGameOver();

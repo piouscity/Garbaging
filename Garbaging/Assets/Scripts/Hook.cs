@@ -90,7 +90,6 @@ public class Hook : MonoBehaviour
         } else if (isDie)
         {
             temp += 1;
-            print(temp);
             if (temp == 30)
             {
                 GameManager.instance.SetGameOver();
