@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         {
             isPause = !isPause;
             PauseScene.SetActive(isPause);
+            Time.timeScale = isPause ? 0 : 1;
         }
     }
 

@@ -16,6 +16,7 @@ public class WaterBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.isPause) return;
         if (!isAccident)
         {
             posTemp.y += 0.02f;

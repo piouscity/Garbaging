@@ -30,6 +30,7 @@ public class Trash : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.isPause) return;
         if (isChoose)
         {
             posTemp.y += gameManager.GetPullSpeed();

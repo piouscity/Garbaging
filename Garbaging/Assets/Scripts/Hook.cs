@@ -39,7 +39,8 @@ public class Hook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isDie && !gameManager.isPause)
+        if (gameManager.isPause) return;
+        if (!isDie)
         {
             if (clonedBingoEffect != null)
             {
@@ -126,7 +127,7 @@ public class Hook : MonoBehaviour
             {
                 soundHookVsFish.Play();
                 isDie = true;
-
+                return;
             }
         }
 
