@@ -42,6 +42,8 @@ public class TrashController : MonoBehaviour
 
     public void CreatePlusAni(Vector2 position)
     {
+
+        RemovePlusAni();
         newPlusAni = Instantiate(
             plusAni,
             new Vector2(position.x , position.y - 0.5f),
@@ -98,7 +100,7 @@ public class TrashController : MonoBehaviour
         {
             print(temp);
             temp += 1;
-            if (temp == 60)
+            if (temp == 30)
             {
                 RemovePlusAni();
                 isHideAniPlus = true;

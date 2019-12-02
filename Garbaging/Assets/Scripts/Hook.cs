@@ -10,7 +10,7 @@ public class Hook : MonoBehaviour
     public AudioSource soundHookVsFish;
 
     public const float MAX_SPEED = 0.065f;
-    public const float SPEED_UP = 1.015f;
+    public const float SPEED_UP = 1.05f;
     public const float BASE_SPEED = 0.04f;
     public const float PULL_SPEED = 3f;
     public const float DROP_SPEED = 2f;

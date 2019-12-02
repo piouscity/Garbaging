@@ -1357,7 +1357,10 @@ MonoBehaviour:
     type: 3}
   trashType10: {fileID: 3859833369319606470, guid: aae4fe6eae55cb04088443b5228cc7e1,
     type: 3}
+  plusAni: {fileID: 6131573005761879809, guid: 4120365158c1447abab2362504a15883, type: 3}
   gameManager: {fileID: 0}
+  isHideAniPlus: 1
+  newPlusAni: {fileID: 0}
 --- !u!4 &1033234871
 Transform:
   m_ObjectHideFlags: 0

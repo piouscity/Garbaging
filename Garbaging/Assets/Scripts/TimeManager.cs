@@ -64,7 +64,7 @@ public class TimeManager : MonoBehaviour
 
         if (listTime.Count > 0)
         {
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown(KeyCode.B) && !GameManager.instance.isPause)
             {
                 GameManager.instance.setPause(true);
                 RemoveTime();
