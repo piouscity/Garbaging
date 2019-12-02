@@ -1869,7 +1869,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bingoEffect
       value: 
-      objectReference: {fileID: 7933690544098107925, guid: db6a97b5b57dce24a979d67dfac20b4b,
+      objectReference: {fileID: 7370194287623134816, guid: ca474fba529f3ac4bbf7f276fa324a06,
         type: 3}
     - target: {fileID: 2105382072041356277, guid: d951e3e56af6646f8a32d57cb74d7877,
         type: 3}
