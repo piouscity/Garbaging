@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PauseScene.SetActive(false);
         Camera camera = Camera.main;
         Vector2 ldCorner = camera.ViewportToWorldPoint(new Vector3(0, 0f, camera.nearClipPlane));
         Vector2 ruCorner = camera.ViewportToWorldPoint(new Vector3(1f, 1f, camera.nearClipPlane));
