@@ -1865,6 +1865,12 @@ PrefabInstance:
       propertyPath: speedHook
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 5144131305886151496, guid: d951e3e56af6646f8a32d57cb74d7877,
+        type: 3}
+      propertyPath: bingoEffect
+      value: 
+      objectReference: {fileID: 7933690544098107925, guid: db6a97b5b57dce24a979d67dfac20b4b,
+        type: 3}
     - target: {fileID: 2105382072041356277, guid: d951e3e56af6646f8a32d57cb74d7877,
         type: 3}
       propertyPath: m_Offset.x

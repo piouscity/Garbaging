@@ -8,6 +8,7 @@ public class Hook : MonoBehaviour
     public AudioSource soundHookMoved;
     public AudioSource soundHookVsGarbage;
     public AudioSource soundHookVsFish;
+    public GameObject bingoEffect;
 
     public const float MAX_SPEED = 0.065f;
     public const float SPEED_UP = 1.05f;
@@ -19,6 +20,7 @@ public class Hook : MonoBehaviour
 
     bool isMove = true;
     bool isUp = false;
+    GameObject clonedBingoEffect = null;
     int temp = 1;
     // Start is called before the first frame update
     [System.Obsolete]
@@ -39,6 +41,16 @@ public class Hook : MonoBehaviour
     {
         if (!isDie && !gameManager.isPause)
         {
+            if (clonedBingoEffect != null)
+            {
+                temp += 1;
+                if (temp >= 50)
+                {
+                    Destroy(clonedBingoEffect);
+                    clonedBingoEffect = null;
+                    temp = 1;
+                }
+            }
             Vector2 posTemp = GetComponent<Transform>().position;
             if (isMove)
             {
@@ -120,6 +132,8 @@ public class Hook : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Trash"))
         {
+            clonedBingoEffect = Instantiate(bingoEffect, GetComponent<Transform>().position, Quaternion.identity);
+            temp = 1;
             soundHookVsGarbage.Play();
             GetComponent<Rigidbody2D>().isKinematic = true;
             isUp = true;
