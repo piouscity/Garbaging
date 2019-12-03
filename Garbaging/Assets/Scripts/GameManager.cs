@@ -60,6 +60,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ContinuePlay()
+    {
+        isPause = false;
+        PauseScene.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public float GetPullSpeed()
     {
         return hookController.GetComponent<Hook>().GetPullSpeed();
